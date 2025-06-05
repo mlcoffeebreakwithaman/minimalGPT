@@ -4,6 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from agent import SimpleStudyAgent
 
+
 # Request model
 class AskRequest(BaseModel):
     topic: str
@@ -52,4 +53,5 @@ def recommend():
         rec = agent.recommend()
         return {"recommendation": rec}
     except Exception as e:
+        
         raise HTTPException(status_code=500, detail=str(e))
