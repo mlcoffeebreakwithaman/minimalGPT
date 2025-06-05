@@ -1,0 +1,5 @@
+Based on the student's current knowledge and progress:
+
+{{progress}}
+
+Suggest two next topics to study and explain why they are important.

@@ -1,0 +1,11 @@
+Create one multiple-choice question for the topic "{{topic}}" using the following material:
+
+{{context}}
+
+Include:
+- Question
+- 4 Options
+- Correct Answer
+- Short explanation
+
+Return as clean JSON.
