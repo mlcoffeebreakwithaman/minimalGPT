@@ -46,6 +46,7 @@ if __name__ == "__main__":
         print("📦 Creating FAISS store...")
         store = FaissStore(dim=len(embeddings[0]), index_path=INDEX_PATH)
         store.save(embeddings)
+        
 
         print("📝 Saving chunks to JSON...")
         with open(CHUNKS_PATH, "w", encoding="utf-8") as f:
@@ -55,3 +56,6 @@ if __name__ == "__main__":
 
     except Exception as e:
         print(f"❌ Ingestion failed: {e}")
+
+
+

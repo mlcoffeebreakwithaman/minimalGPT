@@ -14,11 +14,13 @@ api_key = os.getenv("GEMINI_API_KEY")
 if not api_key:
     raise ValueError("Missing GEMINI_API_KEY in .env")
 
+
 client = genai.Client(api_key=api_key)
 
 # Constants
 PROMPT_DIR = Path("prompts")
 CHUNK_TOP_K = 3
+
 MODEL_NAME = "gemini-2.0-flash-001"  # You can change this to pro if needed
 
 class SimpleStudyAgent:
@@ -35,6 +37,7 @@ class SimpleStudyAgent:
     def _fill_prompt(self, template: str, topic: str, context: str) -> str:
         return template.replace("{{topic}}", topic).replace("{{context}}", context)
 
+    
     def _generate(self, prompt: str) -> str:
         try:
             response = client.models.generate_content(
